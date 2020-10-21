@@ -1,0 +1,27 @@
+
+%%Analysis parameters for SEQUINv3
+
+fname= ('C:\Folder_with_Imaris_output'); %%Location of input folder. This folder should contain a separate folder for each spot.
+name = 'data output' %%Output filename
+spot1 = 'Spots_1_Statistics'; %%Name of spot 1 folder
+spot1ch = '1';                %% Channel # for spot 1 according to Imaris
+spot2 = 'Spots_2_Statistics'; %%Name of spot 2 folder
+spot2ch = '2';                %% Channel # for spot 2 according to Imaris
+spot3 = []; %%Name of spot 3 folder.
+spot3ch = [];                 %% Channel # for spot 3 according to Imaris
+spot1range = [80 100]; %%Intensity interval for spot selection. Requires min and max to be specified.
+spot2range = [80 100]; %%Intensity interval for spot selection. Requires min and max to be specified.
+spot3range = [];       %%Intensity interval for spot selection. Requires min and max to be specified.
+flip=[]; %% XY dimension of image. Assumes input image is square and coordinate space is reference to XYZ 0,0,0.
+spot1volume = []; %%Users selected volume cutoff for spots detection if RegionsGrowing was used in Imaris. Selects spots below cutoff.
+spot2volume = []; %%Users selected volume cutoff for spots detection if RegionsGrowing was used in Imaris. Selects spots below cutoff.
+spot3volume = []; %%Users selected volume cutoff for spots detection if RegionsGrowing was used in Imaris. Selects spots below cutoff.
+nnrange = [];     %% Nearest Neighbor range in nm to selected spot 1 and spot 2 subsets from to perform tricolocalization. Requires prior knowledge spot 1 vs spot2 frequency distribution to accurately set. 
+
+ 
+ 
+spot1previousoutput = []; %% Reading CSV files can be time consuming. If code is to be rerun user can point to previously compiled data matrices to imporove performance.
+spot2previousoutput = [];
+spot3previousoutput = [];
+
+SEQUIN_CSV_TriC(fname, name, spot1,spot1ch, spot2, spot2ch, spot1range, spot2range, nnrange, spot3, spot3ch,spot3range, flip, spot1volume,spot2volume, spot3volume,spot1previousoutput,spot2previousoutput,spot3previousoutput)
