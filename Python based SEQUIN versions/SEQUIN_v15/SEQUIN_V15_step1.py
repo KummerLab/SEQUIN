@@ -1421,7 +1421,7 @@ def spots_detection(image1, image2,file_name,out_name,path,i4,qi,file_name2,imag
                     spot2_other = np.asarray(pd.DataFrame.from_dict(spot2_other, orient='columns'))
               
                     spot1_properties = measure.regionprops(label_image=psd_spots_image, intensity_image=image1)# 
-                    spot2_properties = measure.regionprops(label_image=syn_spots_image, intensity_image=image1)# 
+                    spot2_properties = measure.regionprops(label_image=syn_spots_image, intensity_image=image2)# 
                                  
                       
                     
